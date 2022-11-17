@@ -1,2 +1,2 @@
-# vasavimedicals
-online drug store 
+# medicine_guide
+This is a complete medicine inventory management system.
