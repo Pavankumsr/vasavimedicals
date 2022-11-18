@@ -1,2 +1,2 @@
-# medicine_guide
-This is a complete medicine inventory management system.
+# Vasavi Medicals
+this is  a user friendly medicinal guide for online drug store
