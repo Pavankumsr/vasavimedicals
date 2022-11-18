@@ -1,3 +1,11 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 13, 2017 at 11:07 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -11,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-
+-- Database: `medicineguide`
 --
 
 -- --------------------------------------------------------
@@ -52,14 +60,10 @@ CREATE TABLE `ambulance` (
 --
 
 INSERT INTO `ambulance` (`amId`, `hospitalAddress`, `amRegion`, `hospitalName`) VALUES
-(1, 'Mirpur', 'Mirpur', 'Al-Shafi Hospital'),
-(2, 'Gulshan 2', 'Gulshan', 'United Hospital'),
-(3, 'Road 4', 'Dhanmondi', 'Labaid Hospital'),
-(4, 'Kamal Attartuk Avenue', 'Banani', 'Labaid Hospital'),
-(6, 'Mirpur', 'Mirpur', 'Dr. Azmal Hospital'),
-(7, 'Block: A', 'Bashundhara', 'Apollo Hospital'),
-(9, 'Uttara', 'Uttara', 'Uttara Crescent Hospital'),
-(10, 'Uttara', 'Uttara', 'Uttara Central Hospital');
+(1, 'mirpur,Dhaka', 'mirpur', 'asd'),
+(2, 'aaa', 'aaa', 'aaa'),
+(3, 'aa', 'Banani', 'aa'),
+(4, 'sdf', 'Banani', 'sdf');
 
 -- --------------------------------------------------------
 
@@ -80,10 +84,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`cuEmail`, `cuMobile`, `cuAddress`, `cuName`, `cuId`) VALUES
-('ishmam@gmail.com', '01777389348', 'Bashundhara Residential Area, Dhaka', 'Ishmam Islam', 1),
-('safayetprangon@gmail.com', '016478529984', 'Mirpur', 'Safayet Prangon', 2),
-('shafi@yahoo.com', '0154749365847', 'Uttara', 'Abu Hena Shafi', 3),
-('tamanna@olvine.com', '01558794562', 'Mirpur', 'Sadia Afrin Tamanna', 11);
+('aa@ff.com', '1234', 'aaa', 'asd', 1),
+('aw@ff.com', '1234', 'asd', 'aaa', 2),
+('asd@sdf.com', '01712020202', 'sffd', 'dgdfg', 3);
 
 -- --------------------------------------------------------
 
@@ -102,10 +105,9 @@ CREATE TABLE `customerlogin` (
 --
 
 INSERT INTO `customerlogin` (`cuUserName`, `cuPassword`, `cuId`) VALUES
-('ishmam', '1234', 1),
-('safayet', '1234', 2),
-('shafi', '1234', 3),
-('tamanna', '1234', 11);
+('asd', '12345', 1),
+('aaa', '12345', 2),
+('dgdfg', '12345', 3);
 
 -- --------------------------------------------------------
 
@@ -126,10 +128,7 @@ CREATE TABLE `delivery` (
 --
 
 INSERT INTO `delivery` (`deName`, `deMobile`, `deRegion`, `deId`, `dePass`) VALUES
-('del', '01649781231', 'Mirpur', 6, '1234'),
-('del1', '01478932541', 'Uttara', 7, '1234'),
-('del2', '01478523698', 'Gulshan', 8, '1234'),
-('del12', '12345678901', 'Banani', 10, '1234');
+('del1', '01712021831', 'uttara', 6, '1234');
 
 -- --------------------------------------------------------
 
@@ -150,13 +149,14 @@ CREATE TABLE `medicine` (
 --
 
 INSERT INTO `medicine` (`price`, `medId`, `medName`, `scienteficName`, `diseaseCategory`) VALUES
-(20, 1, 'Napa', 'Paracetamol', 'Fever'),
-(30, 2, 'Ace', 'Paracetamol', 'Fever'),
-(300, 3, 'Sumatriptan', 'Imitrex', 'Migraine'),
-(200, 4, 'Fenadin', 'Allegra', 'Cough'),
-(30, 5, 'Oxitocin', 'Pitocin', 'Pain'),
-(40, 6, 'Glucagon', 'GlucaGen', 'Fever'),
-(20, 8, 'Histacin', 'Chlorphenamine', 'Cold');
+(20, 1, '1.Napa', 'gg', 'fever'),
+(30, 2, '2.ace', 'ff', 'fever'),
+(300, 3, '3.mig', 'hh', 'migraine'),
+(200, 4, '4.fenadin', 'cc', 'caugh'),
+(30, 5, 'oxitocin', 'gayan', 'pain'),
+(40, 6, 'glukon', 'gayan', 'fever'),
+(60, 7, 'unifok', 'boxinotin', 'backpain'),
+(20, 8, 'histacin', 'aaa', 'cold');
 
 -- --------------------------------------------------------
 
@@ -181,12 +181,19 @@ CREATE TABLE `medicineorder` (
 --
 
 INSERT INTO `medicineorder` (`orderId`, `medicinename`, `medquantity`, `medprice`, `totalprice`, `ordercusname`, `orderphone`, `orderaddress`, `orderregion`) VALUES
+(1, '', 0, '', '', 'sdsf', '01712020202', 'dssdf', ''),
 (81, '3.mig', 2, '300', '', 'sf', '01712020202', 'f', 'Mirpur'),
 (82, '4.fenadin', 1, '200', '', 'sf', '01712020202', 'f', 'Mirpur'),
 (83, '1.Napa', 1, '20', '', 'df', '01712020202', 'vv', 'Uttara'),
 (84, '3.mig', 1, '300', '', 'df', '01712020202', 'vv', 'Uttara'),
 (85, 'glukon', 1, '40', '', 'df', '01712020202', 'vv', 'Uttara'),
-(86, 'unifok', 1, '60', '', 'df', '01712020202', 'vv', 'Uttara');
+(86, 'unifok', 1, '60', '', 'df', '01712020202', 'vv', 'Uttara'),
+(87, '2.ace', 2, '30', '', 'shafi', '01712020202', 'bbbbbbnnnnnnn', 'Banani'),
+(88, '3.mig', 1, '300', '', 'shafi', '01712020202', 'bbbbbbnnnnnnn', 'Banani'),
+(89, 'glukon', 1, '40', '', 'shafi', '01712020202', 'bbbbbbnnnnnnn', 'Banani'),
+(90, 'histacin', 1, '20', '', 'shafi', '01712020202', 'bbbbbbnnnnnnn', 'Banani'),
+(91, 'unifok', 1, '60', '', 'shafi', '01712020202', 'bbbbbbnnnnnnn', 'Banani'),
+(92, '1.Napa', 1, '20', '', 'sdf', '01424242524', 'sdsdv', 'Uttara');
 
 -- --------------------------------------------------------
 
@@ -207,9 +214,9 @@ CREATE TABLE `pharmacy` (
 --
 
 INSERT INTO `pharmacy` (`pId`, `pName`, `phMobile`, `phAddress`, `pRegion`) VALUES
-(3, 'ph1', '01478523697', 'Uttara', 'Uttara'),
-(4, 'ph2', '01234958712', 'Banani', 'Banani'),
-(5, 'ph3', '01679537677', 'Mirpur', 'Mirpur');
+(3, 'ph1', '', 'aaaaaaaaa', 'Uttara'),
+(4, 'ph2', '1234', 'aaa', 'Banani'),
+(5, 'ph3', '01679537677', 'aaa', 'Mirpur');
 
 -- --------------------------------------------------------
 
@@ -306,19 +313,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `ambulance`
 --
 ALTER TABLE `ambulance`
-  MODIFY `amId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `amId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `customerlogin`
 --
 ALTER TABLE `customerlogin`
-  MODIFY `cuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `cuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `delivery`
 --
 ALTER TABLE `delivery`
-  MODIFY `deId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `deId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `medicine`
@@ -330,13 +337,13 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `medicineorder`
 --
 ALTER TABLE `medicineorder`
-  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `pharmacylogin`
 --
 ALTER TABLE `pharmacylogin`
-  MODIFY `pId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
